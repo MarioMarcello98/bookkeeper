@@ -1,4 +1,4 @@
-/*
+/**
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,9 +18,7 @@
  * under the License.
  *
  */
-
 package org.apache.bookkeeper.http.servlet;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -31,20 +29,16 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
-
 /**
  * Jetty based http server.
  **/
-
 public class JettyHttpServer {
-
   private Server jettyServer;
   private ContextHandlerCollection contexts;
-
   public JettyHttpServer(String host, int port){
-     this.jettyServer = new Server(new InetSocketAddress(host, port));
-     this.contexts = new ContextHandlerCollection();
-     this.jettyServer.setHandler(contexts);
+    this.jettyServer = new Server(new InetSocketAddress(host, port));
+    this.contexts = new ContextHandlerCollection();
+    this.jettyServer.setHandler(contexts);
   }
   /**
    * Add servlet.
@@ -63,18 +57,16 @@ public class JettyHttpServer {
     }
     contexts.addHandler(webAppBookie);
   }
-
   /**
    * Start jetty server.
    **/
   public void startServer() throws Exception{
-       jettyServer.start();
+    jettyServer.start();
   }
-
   /**
    * Stop jetty server.
    **/
   public void stopServer() throws Exception{
-       jettyServer.stop();
+    jettyServer.stop();
   }
 }

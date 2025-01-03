@@ -113,6 +113,11 @@
     <testRetryCount>2</testRetryCount>
     <src.dir>src/main/java</src.dir>
     <test.additional.args />
+    <!-- SonarCloud additions -->
+    <sonar.organization>MarioMarcello98</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <!-- JaCoCo additions -->
+    <sonar.coverage.jacoco.xmlReportPaths>../test-coverage/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 
     <!-- dependencies -->
     <arquillian-cube.version>1.18.2</arquillian-cube.version>
@@ -523,10 +528,10 @@
       </dependency>
 
       <dependency>
-         <!-- needed by ZooKeeper server -->
-         <groupId>org.xerial.snappy</groupId>
-         <artifactId>snappy-java</artifactId>
-         <version>${snappy.version}</version>
+        <!-- needed by ZooKeeper server -->
+        <groupId>org.xerial.snappy</groupId>
+        <artifactId>snappy-java</artifactId>
+        <version>${snappy.version}</version>
       </dependency>
 
       <!-- curator dependencies -->
